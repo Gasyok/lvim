@@ -4,11 +4,11 @@ lvim.format_on_save = true
 
 opt.number = true
 opt.relativenumber = true
-opt.tabstop = 2
-opt.softtabstop = 2
-opt.shiftwidth = 2
-opt.expandtab = true
-opt.smartindent = true
+opt.tabstop = 4
+-- opt.softtabstop = 4
+opt.shiftwidth = 4
+-- opt.expandtab = true
+-- opt.smartindent = true
 opt.hlsearch = false
 opt.incsearch = true
 opt.cursorline = true -- highlight the current cursor line
@@ -44,10 +44,12 @@ lvim.builtin.treesitter.ignore_install = {}
 lvim.builtin.treesitter.highlight.enabled = true
 
 lvim.builtin.project.detection_methods = { "lsp", "pattern" }
-lvim.builtin.project.patterns = {
-	".git",
-	"package-lock.json",
-	"yarn.lock",
-	"package.json",
-	"requirements.txt",
-}
+lvim.builtin.treesitter.playground.enable = true
+lvim.builtin.treesitter.matchup.enable = true
+vim.filetype.add({
+	extension = {
+		wiki = "markdown",
+	},
+	filename = {},
+	pattern = {},
+})
