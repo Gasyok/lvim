@@ -25,7 +25,7 @@ linters.setup({
 		name = "shellcheck",
 		args = { "--severity", "warning" },
 	},
-	{ name = "cpplint", filetypes = { "cpp" } },
+	{ name = "cpplint", filetypes = { "cpp", "c" } },
 })
 
 local clangd_bin = "clangd"

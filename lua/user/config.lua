@@ -51,3 +51,16 @@ lvim.keys.normal_mode["<leader>lt"] = ":TodoTelescope<CR>"
 lvim.builtin.dap.active = true
 local mason_path = vim.fn.glob(vim.fn.stdpath("data") .. "/mason/")
 require("dap-python").setup(mason_path .. "packages/debugpy/venv/bin/python")
+
+lvim.lsp.clangd.setup = {
+	cmd = { "clangd", "--background-index", "--suggest-missing-includes", "--clang-tidy", "--header-insertion=iwyu" },
+	on_attach = on_attach,
+	handlers = lsp_status.extensions.clangd.setup(),
+	init_options = {
+		clangdFileStatus = true,
+	},
+	capabilities = capabilities,
+	flags = {
+		debounce_text_changes = 150,
+	},
+}
