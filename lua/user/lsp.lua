@@ -28,3 +28,33 @@ linters.setup({
 		args = { "--severity", "warning" },
 	},
 })
+
+local lspconfig = require("lspconfig")
+local capabilities = require("lvim.lsp").common_capabilities()
+capabilities.offsetEncoding = { "utf-16" }
+
+local cmd = {
+	"clangd",
+	"--background-index",
+	"--clang-tidy",
+	"--suggest-missing-includes",
+	"--completion-style=detailed",
+	"--fallback-style=google",
+	"-j=12",
+	"--all-scopes-completion",
+	"--pch-storage=disk",
+	"--log=error",
+	"--header-insertion=iwyu",
+	"--header-insertion-decorators",
+	"--enable-config",
+	"--offset-encoding=utf-16",
+	"--ranking-model=heuristics",
+	"--folding-ranges",
+}
+lspconfig.clangd.setup({
+	cmd = cmd,
+	filetypes = { "c", "cpp", "objc", "objcpp" },
+	on_attach = require("lvim.lsp").common_on_attach,
+	on_init = require("lvim.lsp").common_on_init,
+	capabilities = capabilities,
+})
