@@ -39,7 +39,7 @@ local cmd = {
 	"--clang-tidy",
 	"--suggest-missing-includes",
 	"--completion-style=detailed",
-	"--fallback-style=google",
+	"--fallback-style=Google",
 	"-j=12",
 	"--all-scopes-completion",
 	"--pch-storage=disk",
