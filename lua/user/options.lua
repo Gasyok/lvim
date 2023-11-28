@@ -17,6 +17,7 @@ opt.signcolumn = "yes"
 opt.clipboard:append("unnamedplus")
 opt.swapfile = false
 opt.wrap = false
+opt.whichwrap = ""
 opt.linebreak = true
 opt.sessionoptions = "blank,buffers,curdir,folds,help,tabpages,winsize,winpos,terminal,localoptions"
 
