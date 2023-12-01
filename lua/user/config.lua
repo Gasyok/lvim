@@ -42,7 +42,8 @@ lvim.plugins = {
 	{ "sainnhe/edge" },
 	{ "lunarvim/horizon.nvim" },
 	{ "tomasr/molokai" },
-	{ "ayu-theme/ayu-vim" },
+	{ "Shatur/neovim-ayu" },
+	-- { "ayu-theme/ayu-vim" },
 }
 
 -- Todo comments

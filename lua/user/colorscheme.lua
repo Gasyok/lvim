@@ -18,7 +18,7 @@ local themes = {
 }
 
 lvim.transparent_window = false
-lvim.colorscheme = themes.sonokai
+lvim.colorscheme = themes.ayu
 
 local extra_opts = {
 	sonokai = {
@@ -58,10 +58,14 @@ end
 
 if lvim.colorscheme == themes.edge then
 	vim.g.airline_theme = extra_opts.edge.airline_theme
-	vim.g.edge_style = extra_opts.edge.styles.aura
+	vim.g.edge_style = extra_opts.edge.styles.neon
 	lvim.builtin.lualine.options.theme = extra_opts.edge.lualine_theme
 end
 
--- if lvim.colorscheme == themes.ayu then
--- 	vim.g.ayucolor = extra_opts.ayu.styles.mirage
--- end
+if lvim.colorscheme == themes.ayu then
+	-- vim.g.ayucolor = extra_opts.ayu.styles.mirage
+	require("ayu").setup({
+		mirage = true, -- Set to `true` to use `mirage` variant instead of `dark` for dark background.
+		overrides = {}, -- A dictionary of group names, each associated with a dictionary of parameters (`bg`, `fg`, `sp` and `style`) and colors in hex.
+	})
+end
