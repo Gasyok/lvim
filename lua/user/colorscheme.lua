@@ -28,6 +28,12 @@ local extra_opts = {
 			default = "default",
 		},
 	},
+	gruvbox = {
+		styles = {
+			light = "light",
+			dark = "dark",
+		},
+	},
 	ayu = {
 		styles = {
 			mirage = "mirage",
@@ -63,9 +69,23 @@ if lvim.colorscheme == themes.edge then
 end
 
 if lvim.colorscheme == themes.ayu then
-	-- vim.g.ayucolor = extra_opts.ayu.styles.mirage
 	require("ayu").setup({
 		mirage = true, -- Set to `true` to use `mirage` variant instead of `dark` for dark background.
 		overrides = {}, -- A dictionary of group names, each associated with a dictionary of parameters (`bg`, `fg`, `sp` and `style`) and colors in hex.
 	})
+end
+
+if lvim.colorscheme == themes.gruvbox then
+	local gruvbox_style = extra_opts.gruvbox.styles.dark
+
+	-- Применение стиля Gruvbox
+	if gruvbox_style == "light" then
+		-- Настройки для светлой темы Gruvbox
+		vim.cmd("set background=light")
+		vim.cmd("colorscheme gruvbox-light")
+	elseif gruvbox_style == "dark" then
+		-- Настройки для темной темы Gruvbox
+		vim.cmd("set background=dark")
+		vim.cmd("colorscheme gruvbox")
+	end
 end
