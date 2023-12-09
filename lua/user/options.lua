@@ -11,7 +11,7 @@ opt.expandtab = true
 opt.smartindent = true
 opt.hlsearch = false
 opt.incsearch = true
-opt.cursorline = true -- highlight the current cursor line
+opt.cursorline = false -- highlight the current cursor line
 opt.termguicolors = true
 opt.signcolumn = "yes"
 opt.clipboard:append("unnamedplus")

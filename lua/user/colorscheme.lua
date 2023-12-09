@@ -17,8 +17,8 @@ local themes = {
 	ayu = "ayu",
 }
 
-lvim.transparent_window = false
-lvim.colorscheme = themes.ayu
+lvim.transparent_window = true
+lvim.colorscheme = themes.lunar
 
 local extra_opts = {
 	sonokai = {

@@ -17,6 +17,11 @@ formatters.setup({
 		---@usage only start in these filetypes, by default it will attach to all filetypes it supports
 		filetypes = { "typescript", "typescriptreact", "javascript" },
 	},
+	{
+		name = "sqlformat",
+		args = { "--keywords", "upper" },
+		filetypes = { "sql" },
+	},
 })
 
 local linters = require("lvim.lsp.null-ls.linters")
