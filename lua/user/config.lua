@@ -32,9 +32,9 @@ lvim.plugins = {
 		end,
 	},
 	{ "nvim-neotest/neotest-python" },
+	{ "windwp/nvim-ts-autotag" },
 	{ "AckslD/swenv.nvim" },
 	{ "folke/tokyonight.nvim" },
-	-- { "ellisonleao/gruvbox.nvim" },
 	{ "lunarvim/lunar.nvim" },
 	{ "morhetz/gruvbox" },
 	{ "sainnhe/gruvbox-material" },
@@ -43,7 +43,6 @@ lvim.plugins = {
 	{ "lunarvim/horizon.nvim" },
 	{ "tomasr/molokai" },
 	{ "Shatur/neovim-ayu" },
-	-- { "ayu-theme/ayu-vim" },
 }
 
 -- Todo comments

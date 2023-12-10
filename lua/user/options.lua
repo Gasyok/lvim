@@ -39,6 +39,8 @@ lvim.builtin.treesitter.ensure_installed = {
 	"rust",
 	"java",
 	"yaml",
+	"html",
+	"css",
 }
 
 lvim.builtin.treesitter.ignore_install = {}
@@ -47,6 +49,14 @@ lvim.builtin.treesitter.highlight.enabled = true
 lvim.builtin.project.detection_methods = { "lsp", "pattern" }
 lvim.builtin.treesitter.playground.enable = true
 lvim.builtin.treesitter.matchup.enable = true
+lvim.builtin.treesitter.autotag.enable = true
+
+require("nvim-treesitter.configs").setup({
+	autotag = {
+		enable = true,
+	},
+})
+
 vim.filetype.add({
 	extension = {
 		wiki = "markdown",
