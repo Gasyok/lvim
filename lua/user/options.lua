@@ -1,6 +1,6 @@
 local opt = vim.opt
 
-lvim.format_on_save = true
+lvim.format_on_save = false
 
 opt.number = true
 opt.relativenumber = true
