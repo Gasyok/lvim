@@ -1,5 +1,5 @@
 vim.list_extend(lvim.lsp.automatic_configuration.skipped_servers, {
-	"jdtls",
+	-- "jdtls",
 	"clangd",
 	"omnisharp",
 })
@@ -24,25 +24,31 @@ formatters.setup({
 		filetypes = { "sql" },
 	},
 	{
-		command = "prettierd",
-		filetypes = {
-			"javascript",
-			"javascriptreact",
-			"typescript",
-			"typescriptreact",
-			"vue",
-			"css",
-			"scss",
-			"less",
-			"html",
-			"yaml",
-			"markdown",
-			"markdown.mdx",
-			"graphql",
-			"handlebars",
-			"json",
-		},
+		command = "htmlbeautifier",
 	},
+	{
+		command = "prettier",
+	},
+	-- {
+	-- 	command = "prettierd",
+	-- 	filetypes = {
+	-- 		"javascript",
+	-- 		"javascriptreact",
+	-- 		"typescript",
+	-- 		"typescriptreact",
+	-- 		"vue",
+	-- 		"css",
+	-- 		"scss",
+	-- 		"less",
+	-- 		"html",
+	-- 		"yaml",
+	-- 		"markdown",
+	-- 		"markdown.mdx",
+	-- 		"graphql",
+	-- 		"handlebars",
+	-- 		"json",
+	-- 	},
+	-- },
 })
 
 local linters = require("lvim.lsp.null-ls.linters")

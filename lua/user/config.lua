@@ -1,4 +1,5 @@
 lvim.plugins = {
+	{ "github/copilot.vim" },
 	{
 		"folke/todo-comments.nvim",
 		event = "BufRead",
@@ -37,6 +38,8 @@ lvim.plugins = {
 	{ "folke/tokyonight.nvim" },
 	{ "lunarvim/lunar.nvim" },
 	{ "morhetz/gruvbox" },
+	{ "navarasu/onedark.nvim" },
+	{ "catppuccin/nvim" },
 	{ "sainnhe/gruvbox-material" },
 	{ "sainnhe/sonokai" },
 	{ "sainnhe/edge" },
@@ -90,3 +93,28 @@ dap.configurations.cpp = {
 -- Для C и Rust
 dap.configurations.c = dap.configurations.cpp
 dap.configurations.rust = dap.configurations.cpp
+
+-- Lua configuration example for html-lsp with htmldjango
+lvim.lang.htmldjango.lsp.setup = {
+	provider = "html", -- Assuming html LSP is used for htmldjango
+	-- Additional configuration options specific to the html LSP
+}
+
+local ok, copilot = pcall(require, "copilot")
+if not ok then
+	return
+end
+
+copilot.setup({
+	suggestion = {
+		keymap = {
+			accept = "<c-l>",
+			next = "<c-j>",
+			prev = "<c-k>",
+			dismiss = "<c-h>",
+		},
+	},
+})
+
+local opts = { noremap = true, silent = true }
+vim.api.nvim_set_keymap("n", "<c-s>", "<cmd>lua require('copilot.suggestion').toggle_auto_trigger()<CR>", opts)
